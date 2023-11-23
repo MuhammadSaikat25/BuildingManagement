@@ -10,7 +10,7 @@ const Nav = () => {
   return (
     <nav>
       {/* navbar for large device */}
-      <div className="bg-white hidden fixed top-0 w-full lg:flex items-center justify-around p-2">
+      <div className="bg-white hidden fixed top-0 w-full lg:flex items-center justify-around p-2 z-10">
         <div className="">
           <img src={logo} alt="" />
         </div>
