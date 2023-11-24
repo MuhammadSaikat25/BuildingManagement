@@ -6,6 +6,7 @@ import HomeLayout from "./layout/HomeLayout";
 import Home from "./page/Home/Home";
 import AuthProvider from "./Firebase/AuthProvider";
 import Register from "./components/Register";
+import SingIn from "./components/SingIn";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
     path: "/singup",
     element: <Register></Register>,
   },
+  {
+    path:'singin',
+    element:<SingIn></SingIn>
+  }
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <AuthProvider>

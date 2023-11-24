@@ -4,7 +4,7 @@ import { FaRegEye } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa6";
 import { useState } from "react";
 
-const Register = () => {
+const SingIn = () => {
   const [hidden, sethidden] = useState(false);
   return (
     <div className="relative">
@@ -13,13 +13,7 @@ const Register = () => {
       <div className=" h-[50%] absolute z-30 lg:left-[550px] top-[200px] md:left-40 md:top-[250px] lg:top-[180px] opacity-80">
         <div className="bg-white relative rounded-md p-10 w-[400px]">
           <form className="flex gap-4 flex-col">
-            <input
-              className="border-black border rounded p-2"
-              type="text"
-              name="name"
-              placeholder="Name"
-              required
-            />
+            
             <input
               className="border-black border rounded p-2"
               type="email"
@@ -38,10 +32,10 @@ const Register = () => {
               type="submit"
               className="bg-blue-800 p-1 rounded text-white"
             >
-              Sing Up
+              Sing In
             </button>
             <div
-              className="absolute top-[170px] right-14"
+              className="absolute top-[110px] right-14"
               onClick={() => sethidden(!hidden)}
             >
               {hidden ? <FaRegEye></FaRegEye> : <FaRegEyeSlash></FaRegEyeSlash>}
@@ -57,8 +51,8 @@ const Register = () => {
               Google
             </button>
             <div className="flex items-center justify-center mt-3">
-              <h1>Already have an account ? </h1>
-              <Link to={'/singin'} className="text-blue-800">sing In</Link>
+              <h1>Don't have an account ? </h1>
+              <Link to={'/singup'} className="text-blue-800">sing Up</Link>
             </div>
           </div>
         </div>
@@ -67,4 +61,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default SingIn;
