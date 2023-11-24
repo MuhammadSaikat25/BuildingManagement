@@ -1,6 +1,6 @@
 import logo from "../assets/Logo.png";
 import profileAvatar from "../assets/User-avatar.png";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { RiMenuAddFill } from "react-icons/ri";
 import { IoCloseSharp } from "react-icons/io5";
 import { useState } from "react";
@@ -11,9 +11,10 @@ const Nav = () => {
     <nav>
       {/* navbar for large device */}
       <div className="bg-white hidden fixed top-0 w-full lg:flex items-center justify-around p-2 z-10">
-        <div className="">
-          <img src={logo} alt="" />
-        </div>
+        <Link to={'/'} className="flex gap-2 items-center">
+          <img className="w-[50px]" src={logo} alt="" />
+          <h1 className="font-semibold">Gulshan/BM</h1>
+        </Link>
         <div className="flex items-center gap-7">
           <NavLink
             className={
