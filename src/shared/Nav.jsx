@@ -4,13 +4,21 @@ import { Link, NavLink } from "react-router-dom";
 import { RiMenuAddFill } from "react-icons/ri";
 import { IoCloseSharp } from "react-icons/io5";
 import { useState } from "react";
+import { useContext } from "react";
+import { AuthContext } from "../Firebase/AuthProvider";
 
 const Nav = () => {
   const [open, setOpen] = useState(false);
+  const { user,singOut } = useContext(AuthContext);
+  const [modal, setModal] = useState(false);
+
+  const logOut=async()=>{
+    const res=await singOut()
+  }
   return (
-    <nav>
+    <nav className="relative">
       {/* navbar for large device */}
-      <div className="bg-white hidden fixed top-0 w-full lg:flex items-center justify-around p-2 z-10">
+      <div className="bg-white hidden  fixed top-0 w-full lg:flex items-center justify-around p-2 z-10">
         <Link to={"/"} className="flex gap-2 items-center">
           <img className="w-[50px]" src={logo} alt="" />
           <h1 className="font-semibold">Gulshan/BM</h1>
@@ -30,24 +38,37 @@ const Nav = () => {
           >
             Apartment
           </NavLink>
-          <NavLink
-            className={
-              "text-purple-600 font-semibold hover:underline duration-300"
-            }
-          >
-            LogIn
-          </NavLink>
-          <NavLink
-            to={"/singup"}
-            className={
-              "text-purple-600 font-semibold hover:underline duration-300"
-            }
-          >
-            Sing Up
-          </NavLink>
-          <div className="">
-            <img className="w-[30px] rounded-full" src={profileAvatar} alt="" />
-          </div>
+          {user ? (
+            <div className="">
+              <div className="">
+                <img
+                  onClick={() => setModal(!modal)}
+                  className="w-[30px] rounded-full cursor-pointer"
+                  src={profileAvatar}
+                  alt=""
+                />
+              </div>
+            </div>
+          ) : (
+            <div className="flex items-center gap-3">
+              <NavLink
+                to={"/singin"}
+                className={
+                  "text-purple-600 font-semibold hover:underline duration-300"
+                }
+              >
+                LogIn
+              </NavLink>
+              <NavLink
+                to={"/singup"}
+                className={
+                  "text-purple-600 font-semibold hover:underline duration-300"
+                }
+              >
+                Sing Up
+              </NavLink>
+            </div>
+          )}
         </div>
       </div>
       {/* --------------------------------- */}
@@ -68,16 +89,22 @@ const Nav = () => {
           <div className="flex gap-14 flex-col text-white h-full overflow-y-scroll">
             <NavLink>Home</NavLink>
             <NavLink>Apartment</NavLink>
-            <NavLink>LogIn</NavLink>
-            <NavLink>Sing Up</NavLink>
+            <NavLink to={"/singin"}>LogIn</NavLink>
+            <NavLink to={"/singup"}>Sing Up</NavLink>
             <div>
               <img
-                className="w-[30px] mx-auto rounded-full"
+                className="w-[30px] bg-white mx-auto rounded-full"
                 src={profileAvatar}
                 alt=""
               />
             </div>
           </div>
+        </div>
+      )}
+      {modal && (
+        <div className="fixed flex flex-col gap-2 top-[70px] z-50 bg-yellow-800 lg:right-[250px] p-2 rounded text-white">
+          <Link>Dashboard</Link>
+         <Link onClick={logOut}>Logout</Link>
         </div>
       )}
     </nav>

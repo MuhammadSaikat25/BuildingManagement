@@ -1,18 +1,28 @@
 import img from "../assets/homeImg.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaRegEye } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa6";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../Firebase/AuthProvider";
 
 const SingIn = () => {
+  const navigate=useNavigate()
+  const {login}=useContext(AuthContext)
   const [hidden, sethidden] = useState(false);
+  const singUp=async(e)=>{  
+    e.preventDefault()
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    const res=await login(email,password)
+    navigate('/')
+  }
   return (
     <div className="relative">
       <img className="w-full h-screen object-cover" src={img} alt="" />
       <div className="w-full h-full absolute z-10 bg-black top-0 opacity-60"></div>
       <div className=" h-[50%] absolute z-30 lg:left-[550px] top-[200px] md:left-40 md:top-[250px] lg:top-[180px] opacity-80">
         <div className="bg-white relative rounded-md p-10 w-[400px]">
-          <form className="flex gap-4 flex-col">
+          <form onSubmit={singUp} className="flex gap-4 flex-col">
             
             <input
               className="border-black border rounded p-2"

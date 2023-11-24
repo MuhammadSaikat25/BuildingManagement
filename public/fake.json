@@ -1,0 +1,72 @@
+[
+  {
+    "apartment_image": "image_link_1",
+    "floor_no": 1,
+    "block_name": "Block A",
+    "apartment_no": 101,
+    "rent": 1500
+  },
+  {
+    "apartment_image": "image_link_2",
+    "floor_no": 1,
+    "block_name": "Block A",
+    "apartment_no": 102,
+    "rent": 1600
+  },
+  {
+    "apartment_image": "image_link_3",
+    "floor_no": 2,
+    "block_name": "Block B",
+    "apartment_no": 201,
+    "rent": 1700
+  },
+  {
+    "apartment_image": "image_link_4",
+    "floor_no": 2,
+    "block_name": "Block B",
+    "apartment_no": 202,
+    "rent": 1800
+  },
+  {
+    "apartment_image": "image_link_5",
+    "floor_no": 3,
+    "block_name": "Block C",
+    "apartment_no": 301,
+    "rent": 1900
+  },
+  {
+    "apartment_image": "image_link_6",
+    "floor_no": 3,
+    "block_name": "Block C",
+    "apartment_no": 302,
+    "rent": 2000
+  },
+  {
+    "apartment_image": "image_link_7",
+    "floor_no": 4,
+    "block_name": "Block D",
+    "apartment_no": 401,
+    "rent": 2100
+  },
+  {
+    "apartment_image": "image_link_8",
+    "floor_no": 4,
+    "block_name": "Block D",
+    "apartment_no": 402,
+    "rent": 2200
+  },
+  {
+    "apartment_image": "image_link_9",
+    "floor_no": 5,
+    "block_name": "Block E",
+    "apartment_no": 501,
+    "rent": 2300
+  },
+  {
+    "apartment_image": "image_link_10",
+    "floor_no": 5,
+    "block_name": "Block E",
+    "apartment_no": 502,
+    "rent": 2400
+  }
+]
