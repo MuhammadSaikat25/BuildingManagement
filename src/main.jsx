@@ -4,21 +4,27 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomeLayout from "./layout/HomeLayout";
 import Home from "./page/Home/Home";
+import AuthProvider from "./Firebase/AuthProvider";
+import Register from "./components/Register";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout></HomeLayout>,
-    children:[
+    children: [
       {
-        path:'/',
-        element:<Home></Home>
-      }
-    ]
+        path: "/",
+        element: <Home></Home>,
+      },
+    ],
+  },
+  {
+    path: "/singup",
+    element: <Register></Register>,
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  <AuthProvider>
     <RouterProvider router={router} />
-  </React.StrictMode>
+  </AuthProvider>
 );

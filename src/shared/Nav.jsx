@@ -11,7 +11,7 @@ const Nav = () => {
     <nav>
       {/* navbar for large device */}
       <div className="bg-white hidden fixed top-0 w-full lg:flex items-center justify-around p-2 z-10">
-        <Link to={'/'} className="flex gap-2 items-center">
+        <Link to={"/"} className="flex gap-2 items-center">
           <img className="w-[50px]" src={logo} alt="" />
           <h1 className="font-semibold">Gulshan/BM</h1>
         </Link>
@@ -38,6 +38,7 @@ const Nav = () => {
             LogIn
           </NavLink>
           <NavLink
+            to={"/singup"}
             className={
               "text-purple-600 font-semibold hover:underline duration-300"
             }
