@@ -14,6 +14,7 @@ const Nav = () => {
 
   const logOut=async()=>{
     const res=await singOut()
+    setModal(false)
   }
   return (
     <nav className="relative">
@@ -31,7 +32,7 @@ const Nav = () => {
           >
             Home
           </NavLink>
-          <NavLink
+          <NavLink to={'/aparnments'}
             className={
               "text-purple-600 font-semibold hover:underline duration-300"
             }
@@ -103,7 +104,7 @@ const Nav = () => {
       )}
       {modal && (
         <div className="fixed flex flex-col gap-2 top-[70px] z-50 bg-yellow-800 lg:right-[250px] p-2 rounded text-white">
-          <Link>Dashboard</Link>
+          <Link onClick={()=>setModal(false)}>Dashboard</Link>
          <Link onClick={logOut}>Logout</Link>
         </div>
       )}
@@ -112,3 +113,5 @@ const Nav = () => {
 };
 
 export default Nav;
+
+

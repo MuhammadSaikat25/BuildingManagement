@@ -6,26 +6,33 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../Firebase/AuthProvider";
 import { getAuth, updateProfile } from "firebase/auth";
 import app from "../Firebase/firebase";
+import axios from "axios";
 
 const Register = () => {
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   const Auth = getAuth(app);
   const { singUp } = useContext(AuthContext);
   const [hidden, sethidden] = useState(false);
   const creatUser = async (e) => {
     e.preventDefault();
-    // Assuming this code is inside an async function or an async context
+
     const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
 
     try {
+      const userInfo = { email, name };
+
       const res = await singUp(email, password);
-      // Assuming Auth is your authentication object, make sure it is correctly defined
       const update = await updateProfile(Auth.currentUser, {
         displayName: name,
       });
-      navigate('/')
+      const { data } = await axios.post(
+        `${import.meta.env.VITE_SERVER}addUser`,
+        userInfo
+      );
+
+      navigate("/");
     } catch (error) {
       console.error("Error:", error);
     }

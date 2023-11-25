@@ -1,72 +1,114 @@
 [
   {
-    "apartment_image": "image_link_1",
+    "apartment_image": "https://www.apartments.com/blog/sites/default/files/styles/x_large_hq/public/image/2023-06/ParkLine-apartment-in-Miami-FL.jpg?itok=kQmw64UU",
     "floor_no": 1,
     "block_name": "Block A",
     "apartment_no": 101,
     "rent": 1500
   },
   {
-    "apartment_image": "image_link_2",
+    "apartment_image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/383834719.jpg?k=a8ed632aeaf2eb621e6753e941d4fb2f858005614b603cdef5bfe644ce1a1906&o=&hp=1",
+    "floor_no": 1,
+    "block_name": "Block A",
+    "apartment_no": 102,
+    "rent": 1700
+  },
+  {
+    "apartment_image": "https://mapartments.co.uk/uploads/transforms/b235c4646ab36ef9ae959de20fa459fc/11257/401_topRenders_b_7abbbb2796f27c91ef535646dc2c5299.webp",
+    "floor_no": 1,
+    "block_name": "Block A",
+    "apartment_no": 103,
+    "rent": 1300
+  },
+  {
+    "apartment_image": "https://harbr.de/fileadmin/_processed_/a/1/csm_harbr_boardinghouse_ludwigsburg_apartment_comfort_02_8fdc0763bd.jpg",
     "floor_no": 1,
     "block_name": "Block A",
     "apartment_no": 102,
     "rent": 1600
   },
   {
-    "apartment_image": "image_link_3",
+    "apartment_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDlNP7gDjPB2ca9AJpxm2hiM-AfYi6QSA6VQ&usqp=CAU",
     "floor_no": 2,
     "block_name": "Block B",
     "apartment_no": 201,
     "rent": 1700
   },
   {
-    "apartment_image": "image_link_4",
+    "apartment_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvX00slbpQRKUfHEMNbNtDaHa5P0BGWYXUVw&usqp=CAU",
+    "floor_no": 2,
+    "block_name": "Block B",
+    "apartment_no": 203,
+    "rent": 1700
+  },
+  {
+    "apartment_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0RWlYJembBx6cLn2CdGGNkJCP7YhqzqO6lQ&usqp=CAU",
+    "floor_no": 2,
+    "block_name": "Block B",
+    "apartment_no": 202,
+    "rent": 1700
+  },
+  {
+    "apartment_image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/259339853.jpg?k=c6a3d201bb185c2df017c6400f9afda3f0b90ef0fb4da0978e6d53593e6ed805&o=&hp=1",
     "floor_no": 2,
     "block_name": "Block B",
     "apartment_no": 202,
     "rent": 1800
   },
   {
-    "apartment_image": "image_link_5",
+    "apartment_image": "https://assets.architecturaldigest.in/photos/6103f4942666b26539862650/16:9/w_2560%2Cc_limit/This%2520New%2520Delhi%2520apartment%2520is%2520a%2520blend%2520of%2520East%2520and%2520West%252016.jpeg",
     "floor_no": 3,
     "block_name": "Block C",
     "apartment_no": 301,
     "rent": 1900
   },
   {
-    "apartment_image": "image_link_6",
+    "apartment_image": "https://photos2.theblueground.com/736/pg25658-o-cfaf70eb-8659-ff92-cb2c-7e942ada5679.jpg?quality=low",
     "floor_no": 3,
     "block_name": "Block C",
     "apartment_no": 302,
     "rent": 2000
   },
   {
-    "apartment_image": "image_link_7",
+    "apartment_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTte76Us8V7RNHaqj9Mi7YMFtXbDKwcl79huQ&usqp=CAU",
     "floor_no": 4,
     "block_name": "Block D",
     "apartment_no": 401,
     "rent": 2100
   },
   {
-    "apartment_image": "image_link_8",
+    "apartment_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHNYemyftflsRC4KP6e6VovGid7ljehizHwQ&usqp=CAU",
     "floor_no": 4,
     "block_name": "Block D",
     "apartment_no": 402,
     "rent": 2200
   },
   {
-    "apartment_image": "image_link_9",
+    "apartment_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyGIdzEHyC2dL0cDr8--ZP32RmNDzpXHgPSw&usqp=CAU",
     "floor_no": 5,
     "block_name": "Block E",
     "apartment_no": 501,
     "rent": 2300
   },
   {
-    "apartment_image": "image_link_10",
+    "apartment_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4wuQB_8q4BlwS2csa4lrE8qXmKzAlaDceVA&usqp=CAU",
     "floor_no": 5,
     "block_name": "Block E",
     "apartment_no": 502,
     "rent": 2400
+  },
+  {
+    "apartment_image": "https://media.designcafe.com/wp-content/uploads/2021/11/08175139/living-cum-bedroom-cozy-apartment-ideas.jpg",
+    "floor_no": 5,
+    "block_name": "Block E",
+    "apartment_no": 503,
+    "rent": 2200
+  },
+  {
+    "apartment_image": "https://media.designcafe.com/wp-content/uploads/2021/11/08175119/cozy-apartment-bedroom-ideas-with-study-area.jpg",
+    "floor_no": 5,
+    "block_name": "Block E",
+    "apartment_no": 505,
+    "rent": 2000
   }
 ]

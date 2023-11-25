@@ -7,6 +7,10 @@ import Home from "./page/Home/Home";
 import AuthProvider from "./Firebase/AuthProvider";
 import Register from "./components/Register";
 import SingIn from "./components/SingIn";
+import { QueryClient, QueryClientProvider } from "react-query";
+import Apartments from "./page/Apartments/Apartments";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +21,10 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
       },
+      {
+        path:'/aparnments',
+        element:<Apartments></Apartments>
+      }
     ],
   },
   {
@@ -24,12 +32,16 @@ const router = createBrowserRouter([
     element: <Register></Register>,
   },
   {
-    path:'singin',
-    element:<SingIn></SingIn>
-  }
+    path: "singin",
+    element: <SingIn></SingIn>,
+  },
 ]);
+<ToastContainer />
+const queryClient = new QueryClient();
 ReactDOM.createRoot(document.getElementById("root")).render(
   <AuthProvider>
-    <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
   </AuthProvider>
 );
