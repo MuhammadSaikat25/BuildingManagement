@@ -21,8 +21,7 @@ const Register = () => {
     const password = e.target.password.value;
 
     try {
-      const userInfo = { email, name };
-
+      const userInfo = { email, name,role:'user' };
       const res = await singUp(email, password);
       const update = await updateProfile(Auth.currentUser, {
         displayName: name,

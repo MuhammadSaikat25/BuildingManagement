@@ -11,12 +11,19 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import Apartments from "./page/Apartments/Apartments";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Dashboard from "./page/Dahsboard/Dashboard";
+import ManageUses from "./page/Dahsboard/Admin/ManageUses";
+import AgreementRequest from "./page/Dahsboard/Admin/AgreementRequest";
+import ManageCoupons from "./page/Dahsboard/Admin/ManageCoupons";
+import MyProfile from "./page/Dahsboard/MyProfile";
+import Announcement from "./page/Dahsboard/Announcement";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout></HomeLayout>,
     children: [
+      
       {
         path: "/",
         element: <Home></Home>,
@@ -35,6 +42,32 @@ const router = createBrowserRouter([
     path: "singin",
     element: <SingIn></SingIn>,
   },
+  {
+    path:"/Dashboard",
+    element:<Dashboard></Dashboard>,
+    children:[
+      {
+        path:'myProfile',
+        element:<MyProfile></MyProfile>
+      },
+      {
+        path:'ManageUser',
+        element:<ManageUses></ManageUses>
+      },
+      {
+        path:'AgreementRequest',
+        element:<AgreementRequest></AgreementRequest>
+      },
+      {
+        path:'ManageCoupons',
+        element:<ManageCoupons></ManageCoupons>
+      },
+      {
+        path:'Annoucement',
+        element:<Announcement></Announcement>
+      }
+    ]
+  }
 ]);
 <ToastContainer />
 const queryClient = new QueryClient();

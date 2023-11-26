@@ -104,7 +104,7 @@ const Nav = () => {
       )}
       {modal && (
         <div className="fixed flex flex-col gap-2 top-[70px] z-50 bg-yellow-800 lg:right-[250px] p-2 rounded text-white">
-          <Link onClick={()=>setModal(false)}>Dashboard</Link>
+          <Link to={'/Dashboard/myProfile'} onClick={()=>setModal(false)}>Dashboard</Link>
          <Link onClick={logOut}>Logout</Link>
         </div>
       )}
