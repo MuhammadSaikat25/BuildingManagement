@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import useInterceptor from "../../../Hooks/useInterceptor";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { AuthContext } from "../../../Firebase/AuthProvider";
 
 const AgreementRequest = () => {
+  const {user}=useContext(AuthContext)
   const axiosInterceptor = useInterceptor();
   const [agreements, setAgreements] = useState([]);
   useEffect(() => {
@@ -20,7 +22,7 @@ const AgreementRequest = () => {
     floor_no,
     rent,
     room_id,
-    user,
+    userEmail,
     userName,
     _id
   ) => {
@@ -32,14 +34,22 @@ const AgreementRequest = () => {
       floor_no,
       rent,
       room_id,
-      user,
+      userEmail,
       userName,
       role: "member",
       status: "checked",
     };
-    const res = await axiosInterceptor.patch(`handelAgreement/${_id}`, obj);
+    const userObj={
+      email:user?.email,
+      name:user?.displayName,
+      role:'member'
+    }
+    const agreementRes = await axiosInterceptor.patch(`handelAgreement/${_id}`, obj);
+    const userRole=await axiosInterceptor.patch(`makeUserMember/${userEmail}`,userObj)
+   console.log(userRole)
     toast("Agreement Accept successful");
   };
+  // ---------------------------------
   const rejectAgreement = async (
     apartment_image,
     apartment_no,
@@ -48,7 +58,7 @@ const AgreementRequest = () => {
     floor_no,
     rent,
     room_id,
-    user,
+    userEmail,
     userName,
     _id
   ) => {
@@ -60,7 +70,7 @@ const AgreementRequest = () => {
       floor_no,
       rent,
       room_id,
-      user,
+      userEmail,
       userName,
       role: "user",
       status: "checked",
@@ -68,7 +78,7 @@ const AgreementRequest = () => {
     const res = await axiosInterceptor.patch(`handelAgreement/${_id}`, obj);
     toast("Agreement Rejected");
   };
-
+  console.log(user)
   return (
     <div className="mt-20">
       <ToastContainer></ToastContainer>

@@ -27,14 +27,14 @@ const Nav = () => {
         <div className="flex items-center gap-7">
           <NavLink
             className={
-              "text-purple-600 font-semibold hover:underline duration-300"
+              "text-purple-600 font-semibold "
             }
           >
             Home
           </NavLink>
           <NavLink to={'/aparnments'}
             className={
-              "text-purple-600 font-semibold hover:underline duration-300"
+              "text-purple-600 font-semibold "
             }
           >
             Apartment
@@ -55,7 +55,7 @@ const Nav = () => {
               <NavLink
                 to={"/singin"}
                 className={
-                  "text-purple-600 font-semibold hover:underline duration-300"
+                  "text-purple-600 font-semibold "
                 }
               >
                 LogIn
@@ -63,7 +63,7 @@ const Nav = () => {
               <NavLink
                 to={"/singup"}
                 className={
-                  "text-purple-600 font-semibold hover:underline duration-300"
+                  "text-purple-600 font-semibold "
                 }
               >
                 Sing Up

@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import useInterceptor from "../../Hooks/useInterceptor";
 import { AuthContext } from "../../Firebase/AuthProvider";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { RiMenuAddFill } from "react-icons/ri";
 import { IoCloseSharp } from "react-icons/io5";
 import logo from "../../assets/Logo.png";
@@ -20,7 +20,7 @@ const DashboardNav = () => {
         .catch((error) => console.error(error));
     }
   }, [userInfo]);
- 
+  console.log(role);
   return (
     <div className="">
       <div className="hidden bg-slate-950 h-screen lg:w-[200px] text-white lg:block p-5">
@@ -86,6 +86,44 @@ const DashboardNav = () => {
             >
               Home
             </NavLink>
+          </div>
+        )}
+        {role === "member" && (
+          <div className="p-2 flex flex-col gap-2">
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "bg-orange-500 p-1 text-white rounded" : ""
+              }
+              to={"/Dashboard/myProfile"}
+            >
+              My Profile
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "bg-orange-500 p-1 text-white rounded" : ""
+              }
+              to={"/Dashboard/makePayment"}
+            >
+              Make Payment
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "bg-orange-500 p-1 text-white rounded" : ""
+              }
+              to={"/Dashboard/PaymentHistory"}
+            >
+              Payment History
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "bg-orange-500 p-1 text-white rounded" : ""
+              }
+              to={"/Dashboard/Annoucement"}
+            >
+              Announcements
+            </NavLink>
+
+            <Link to={"/"}>Home</Link>
           </div>
         )}
       </div>
@@ -165,6 +203,44 @@ const DashboardNav = () => {
               >
                 Home
               </NavLink>
+            </div>
+          )}
+          {role === "member" && (
+            <div className="p-2 flex flex-col gap-2">
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "bg-orange-500 p-1 text-white rounded" : ""
+                }
+                to={"/Dashboard/myProfile"}
+              >
+                My Profile
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "bg-orange-500 p-1 text-white rounded" : ""
+                }
+                to={"/Dashboard/makePayment"}
+              >
+                Make Payment
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "bg-orange-500 p-1 text-white rounded" : ""
+                }
+                to={"/Dashboard/PaymentHistory"}
+              >
+                Payment History
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "bg-orange-500 p-1 text-white rounded" : ""
+                }
+                to={"/Dashboard/Annoucement"}
+              >
+                Announcements
+              </NavLink>
+
+              <Link to={"/"}>Home</Link>
             </div>
           )}
         </div>

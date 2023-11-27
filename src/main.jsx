@@ -17,6 +17,8 @@ import AgreementRequest from "./page/Dahsboard/Admin/AgreementRequest";
 import ManageCoupons from "./page/Dahsboard/Admin/ManageCoupons";
 import MyProfile from "./page/Dahsboard/MyProfile";
 import Announcement from "./page/Dahsboard/Announcement";
+import MakePayment from "./page/Dahsboard/Members/MakePayment";
+import PaymentHistory from "./page/Dahsboard/Members/PaymentHistory";
 
 const router = createBrowserRouter([
   {
@@ -65,6 +67,14 @@ const router = createBrowserRouter([
       {
         path:'Annoucement',
         element:<Announcement></Announcement>
+      },
+      {
+        path:'makePayment',
+        element:<MakePayment></MakePayment>
+      },
+      {
+        path:"PaymentHistory",
+        element:<PaymentHistory></PaymentHistory>
       }
     ]
   }
