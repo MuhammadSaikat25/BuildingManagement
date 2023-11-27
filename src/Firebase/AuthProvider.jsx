@@ -5,6 +5,8 @@ import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
+  GoogleAuthProvider ,
+  signInWithPopup
 } from "firebase/auth";
 import app from "./firebase";
 import axios from "axios";
@@ -14,7 +16,7 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const Auth = getAuth(app);
   const [user, setUser] = useState(null);
-
+  const provider = new GoogleAuthProvider()
   const singUp = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(Auth, email, password);
@@ -22,6 +24,9 @@ const AuthProvider = ({ children }) => {
   const login = (email, password) => {
     return signInWithEmailAndPassword(Auth, email, password);
   };
+  const google=()=>{
+    return signInWithPopup(Auth,provider)
+  }
   const singOut = () => {
     return signOut(Auth);
   };
@@ -51,6 +56,7 @@ const AuthProvider = ({ children }) => {
     user,
     loading,
     singOut,
+    google
   };
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
