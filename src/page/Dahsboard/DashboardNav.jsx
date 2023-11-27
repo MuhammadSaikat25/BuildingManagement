@@ -10,17 +10,17 @@ const DashboardNav = () => {
   const [open, setOpen] = useState(false);
   const { user } = useContext(AuthContext);
   const axiosInterceptor = useInterceptor();
-  const [role, setRoal] = useState(null);
+  const [role, setRole] = useState(null);
   const userInfo = user?.email;
   useEffect(() => {
     if (userInfo) {
       axiosInterceptor
-        .get(`${import.meta.env.VITE_SERVER}userRoal/${userInfo}`)
-        .then((res) => setRoal(res.data.role))
+        .get(`${import.meta.env.VITE_SERVER}userRole/${userInfo}`)
+        .then((res) => setRole(res.data.role))
         .catch((error) => console.error(error));
     }
   }, [userInfo]);
-
+ console.log(role)
   return (
     <div className="">
       <div className="hidden bg-slate-950 h-screen lg:w-[200px] text-white lg:block p-5">
@@ -62,9 +62,30 @@ const DashboardNav = () => {
         )}
         {role === "user" && (
           <div className="flex flex-col gap-5">
-            <NavLink>Profile</NavLink>
-            <NavLink to={"/Dashboard/Annoucement"}>Announcements</NavLink>
-            <NavLink to={"/"}>Home</NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "bg-orange-400 p-1 rounded" : ""
+              }
+              to={"/Dashboard/myProfile"}
+            >
+              Profile
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "bg-orange-400 p-1 rounded" : ""
+              }
+              to={"/Dashboard/Annoucement"}
+            >
+              Announcements
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "bg-orange-400 p-1 rounded" : ""
+              }
+              to={"/"}
+            >
+              Home
+            </NavLink>
           </div>
         )}
       </div>
@@ -83,7 +104,7 @@ const DashboardNav = () => {
       {open && (
         <div className=" bg-black h-screen  text-white mt-10 p-3">
           {role === "admin" && (
-            <div className="flex flex-col text-white">
+            <div className="flex flex-col gap-4">
               <NavLink
                 className={({ isActive }) =>
                   isActive ? "bg-orange-400 p-1 rounded" : ""
@@ -124,6 +145,7 @@ const DashboardNav = () => {
                 className={({ isActive }) =>
                   isActive ? "bg-orange-400 p-1 rounded" : ""
                 }
+                to={"/Dashboard/myProfile"}
               >
                 Profile
               </NavLink>
@@ -131,6 +153,7 @@ const DashboardNav = () => {
                 className={({ isActive }) =>
                   isActive ? "bg-orange-400 p-1 rounded" : ""
                 }
+                to={"/Dashboard/Annoucement"}
               >
                 Announcements
               </NavLink>

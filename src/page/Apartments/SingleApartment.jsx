@@ -12,8 +12,8 @@ const SingleApartment = ({ apartment }) => {
     apartment;
   const currentDate = new Date();
   const date = moment(currentDate).format("YYYY-MM-DD");
-  const [roal, setRoal] = useState("");
-  
+  const [role, setRole] = useState("");
+
   const booking = async () => {
     if (!user) {
       return toast("Please login for rent");
@@ -26,17 +26,20 @@ const SingleApartment = ({ apartment }) => {
       rent,
       block_name,
       user: user?.email,
-      status: "pending",
       date,
+      userName: user?.displayName,
+      role: "user",
+      status: "pending",
     };
     const res = await axiosInterceptor.post("agreement", data);
+    toast("Agreements request successful");
   };
   const userInfo = user?.email;
   useEffect(() => {
     if (userInfo) {
       axiosInterceptor
-        .get(`${import.meta.env.VITE_SERVER}userRoal/${userInfo}`)
-        .then((res) => setRoal(res.data.role))
+        .get(`${import.meta.env.VITE_SERVER}userRole/${userInfo}`)
+        .then((res) => setRole(res.data.role))
         .catch((error) => console.error(error));
     }
   }, [userInfo]);
@@ -51,11 +54,11 @@ const SingleApartment = ({ apartment }) => {
           alt=""
         />
         <h1>Block: {block_name}</h1>
-        <h1>Aparnment: {apartment_no}</h1>
+        <h1>Apartment: {apartment_no}</h1>
         <h1>Floor: {floor_no}</h1>
         <h1>Rent: ${rent}</h1>
         <button
-          disabled={roal === "admin"}
+          disabled={role === "admin"}
           onClick={booking}
           className="bg-blue-700 p-1 rounded text-white w-full"
         >
