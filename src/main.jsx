@@ -12,13 +12,13 @@ import Apartments from "./page/Apartments/Apartments";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Dashboard from "./page/Dahsboard/Dashboard";
-import ManageUses from "./page/Dahsboard/Admin/ManageUses";
 import AgreementRequest from "./page/Dahsboard/Admin/AgreementRequest";
 import ManageCoupons from "./page/Dahsboard/Admin/ManageCoupons";
 import MyProfile from "./page/Dahsboard/MyProfile";
 import Announcement from "./page/Dahsboard/Announcement";
 import MakePayment from "./page/Dahsboard/Members/MakePayment";
 import PaymentHistory from "./page/Dahsboard/Members/PaymentHistory";
+import ManageUsers from "./page/Dahsboard/Admin/ManageUsers";
 
 const router = createBrowserRouter([
   {
@@ -54,7 +54,7 @@ const router = createBrowserRouter([
       },
       {
         path:'ManageUser',
-        element:<ManageUses></ManageUses>
+        element:<ManageUsers></ManageUsers>
       },
       {
         path:'AgreementRequest',

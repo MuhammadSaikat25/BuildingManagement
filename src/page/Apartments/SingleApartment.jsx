@@ -6,10 +6,10 @@ import useInterceptor from "../../Hooks/useInterceptor";
 import moment from "moment";
 
 const SingleApartment = ({ apartment }) => {
+
   const axiosInterceptor = useInterceptor();
   const { user } = useContext(AuthContext);
-  const { apartment_image, _id, block_name, apartment_no, floor_no, rent } =
-    apartment;
+  const { apartment_image, _id, block_name, apartment_no, floor_no, rent } = apartment;
   const currentDate = new Date();
   const date = moment(currentDate).format("YYYY-MM-DD");
   const [role, setRole] = useState("");
@@ -34,6 +34,7 @@ const SingleApartment = ({ apartment }) => {
     const res = await axiosInterceptor.post("agreement", data);
     toast("Agreements request successful");
   };
+  // ! check user role , is admin then make Agreement btn disable.
   const userInfo = user?.email;
   useEffect(() => {
     if (userInfo) {

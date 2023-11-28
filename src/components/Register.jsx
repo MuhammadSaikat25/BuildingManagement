@@ -10,42 +10,42 @@ import axios from "axios";
 
 const Register = () => {
   const { google, user } = useContext(AuthContext);
-  console.log(user)
   const navigate = useNavigate();
-  const [error,setError]=useState('')
+  const [error, setError] = useState("");
   const Auth = getAuth(app);
   const { singUp } = useContext(AuthContext);
-  const [hidden, sethidden] = useState(false);
+  const [hidden, setHidden] = useState(false);
 
   const creatUser = async (e) => {
     e.preventDefault();
     const name = e.target.name.value;
-    const email = e.target.email.value;
+    const em = e.target.email.value;
+    const email=em.toLowerCase()
     const password = e.target.password.value;
     try {
-      const userInfo = { email, name, role: "user" };
       const res = await singUp(email, password);
       const update = await updateProfile(Auth.currentUser, {
         displayName: name,
       });
+      const userInfo = { email, name, role: "user" };
       const { data } = await axios.post(
         `${import.meta.env.VITE_SERVER}addUser`,
         userInfo
       );
-        setError('')
       navigate("/");
+      setError("");
     } catch (error) {
-      setError("Email already exist")
+      setError("Email already exist");
       // console.error("Error:", error.error);
     }
   };
 
   const Google = async () => {
     try {
-      setError('')
+      setError("");
       const res = await google();
-      console.log(res)
-      navigate('/')
+      console.log(res);
+      navigate("/");
       const obj = {
         email: res.user?.email,
         name: res.user?.displayName,
@@ -55,11 +55,9 @@ const Register = () => {
         `${import.meta.env.VITE_SERVER}addUser`,
         obj
       );
-    
     } catch (error) {
       console.log(error.massage);
     }
-   
   };
   return (
     <div className="relative">
@@ -97,11 +95,11 @@ const Register = () => {
             </button>
             <div
               className="absolute top-[170px] right-14"
-              onClick={() => sethidden(!hidden)}
+              onClick={() => setHidden(!hidden)}
             >
               {hidden ? <FaRegEye></FaRegEye> : <FaRegEyeSlash></FaRegEyeSlash>}
             </div>
-            <h1 className="text-center text-red-600">{error}</h1>
+            {/* <h1 className="text-center text-red-600">{error}</h1> */}
           </form>
           <div className="">
             <div className="flex items-center">

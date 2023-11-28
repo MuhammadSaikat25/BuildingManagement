@@ -40,7 +40,7 @@ const DashboardNav = () => {
               }
               to={"/Dashboard/ManageUser"}
             >
-              Mange User
+              Mange Member
             </NavLink>
             <NavLink
               className={({ isActive }) =>
