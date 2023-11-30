@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import useInterceptor from "../../Hooks/useInterceptor";
 import MemberProfile from "./components/MemberProfile";
 import { AuthContext } from "../../Firebase/AuthProvider";
+import UserProfile from "./components/UserProfile";
 
 const MyProfile = () => {
   const {user}=useContext(AuthContext)
@@ -20,6 +21,7 @@ const MyProfile = () => {
   return (
     <div className="">
       {role==='member' && <MemberProfile></MemberProfile>}
+      {/* {role==='user' && <UserProfile></UserProfile>} */}
     </div>
   )
 };
