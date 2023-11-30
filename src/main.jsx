@@ -19,7 +19,7 @@ import Announcement from "./page/Dahsboard/Announcement";
 import MakePayment from "./page/Dahsboard/Members/MakePayment";
 import PaymentHistory from "./page/Dahsboard/Members/PaymentHistory";
 import ManageUsers from "./page/Dahsboard/Admin/ManageUsers";
-
+import Payment from "./page/Dahsboard/Members/Payment";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -75,6 +75,10 @@ const router = createBrowserRouter([
       {
         path:"PaymentHistory",
         element:<PaymentHistory></PaymentHistory>
+      },
+      {
+        path:"payment",
+        element:<Payment></Payment>
       }
     ]
   }

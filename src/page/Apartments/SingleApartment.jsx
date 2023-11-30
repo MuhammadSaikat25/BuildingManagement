@@ -6,10 +6,10 @@ import useInterceptor from "../../Hooks/useInterceptor";
 import moment from "moment";
 
 const SingleApartment = ({ apartment }) => {
-
   const axiosInterceptor = useInterceptor();
   const { user } = useContext(AuthContext);
-  const { apartment_image, _id, block_name, apartment_no, floor_no, rent } = apartment;
+  const { apartment_image, _id, block_name, apartment_no, floor_no, rent } =
+    apartment;
   const currentDate = new Date();
   const date = moment(currentDate).format("YYYY-MM-DD");
   const [role, setRole] = useState("");
@@ -18,6 +18,14 @@ const SingleApartment = ({ apartment }) => {
     if (!user) {
       return toast("Please login for rent");
     }
+    const resA = await axiosInterceptor.get(
+      `${import.meta.env.VITE_SERVER}userAgreement/${user?.email}`
+    );
+    const value = resA.data;
+    if (value.length > 0) {
+      return toast("yon can take rent only one apartment. ");
+    }
+
     const data = {
       apartment_image,
       room_id: _id,
