@@ -41,7 +41,6 @@ const AgreementRequest = () => {
     const UserInfo = {
       email: userEmail,
       name: userName,
-      
     };
     const userToMember = await axiosInterceptor.patch(
       `userToMember/${userEmail}`,
@@ -87,17 +86,7 @@ const AgreementRequest = () => {
       {data?.length > 0 ? (
         <div className="mt-20">
           <ToastContainer></ToastContainer>
-          {/* ---------------------------------- */}
-          <div className="mb-10 flex items-center gap-2">
-            <div className="flex items-center gap-1">
-              <h1 className="w-[20px] h-[20px] bg-green-500"></h1>
-              <h1 className="">Accept</h1>
-            </div>
-            <div className="flex items-center gap-1">
-              <h1 className="w-[20px] h-[20px] bg-red-500"></h1>
-              <h1 className="">Reject</h1>
-            </div>
-          </div>
+
           {/* ---------------------------------- */}
           {data && (
             <div>
@@ -185,11 +174,6 @@ const AgreementRequest = () => {
                         className="px-6 py-4 whitespace-nowrap "
                       >
                         <button
-                          className={`${
-                            item.role !== "member"
-                              ? "bg-red-500"
-                              : "bg-green-500 text-white p-1 rounded"
-                          }`}
                           disabled={
                             item.role === "member" ||
                             (item.role === "user" && item.status === "checked")
@@ -218,11 +202,6 @@ const AgreementRequest = () => {
                             item.role === "member" ||
                             (item.role === "user" && item.status === "checked")
                           }
-                          className={`${
-                            item.role === "member"
-                              ? ""
-                              : "bg-red-500 p-1 rounded text-white"
-                          }`}
                         >
                           Reject
                         </button>
