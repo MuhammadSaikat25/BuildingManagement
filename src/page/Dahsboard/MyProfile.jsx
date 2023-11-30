@@ -1,9 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import useInterceptor from "../../Hooks/useInterceptor";
+import MemberProfile from "./components/MemberProfile";
 import { AuthContext } from "../../Firebase/AuthProvider";
 
 const MyProfile = () => {
-  const { user } = useContext(AuthContext);
+  const {user}=useContext(AuthContext)
   const userInfo = user?.email;
   const axiosInterceptor = useInterceptor();
   const [role, setRole] = useState("");
@@ -16,9 +17,11 @@ const MyProfile = () => {
     }
   }, [userInfo]);
   
-  return <div>
-    
-  </div>;
+  return (
+    <div className="">
+      {role==='member' && <MemberProfile></MemberProfile>}
+    </div>
+  )
 };
 
 export default MyProfile;

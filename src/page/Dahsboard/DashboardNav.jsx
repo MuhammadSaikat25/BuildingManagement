@@ -62,6 +62,14 @@ const DashboardNav = () => {
               className={({ isActive }) =>
                 isActive ? "bg-orange-400 p-1 rounded" : ""
               }
+              to={"/Dashboard/ManageAnnouncement"}
+            >
+              Announcement
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "bg-orange-400 p-1 rounded" : ""
+              }
               to={"/"}
             >
               Home
@@ -173,7 +181,15 @@ const DashboardNav = () => {
                 }
                 to={"/Dashboard/ManageCoupons"}
               >
-                ManageCoupons
+                Manage Coupons
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "bg-orange-400 p-1 rounded" : ""
+                }
+                to={"/Dashboard/ManageAnnouncement"}
+              >
+                Announcement
               </NavLink>
               <NavLink
                 className={({ isActive }) =>

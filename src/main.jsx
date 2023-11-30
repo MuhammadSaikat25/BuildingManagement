@@ -23,6 +23,7 @@ import Payment from "./page/Dahsboard/Members/Payment";
 import UserRoute from "./Firebase/PrivateRoutes/UserRoute";
 import MemberRoute from "./Firebase/PrivateRoutes/MemberRoute";
 import AdminRoute from "./Firebase/PrivateRoutes/AdminRoute";
+import ManageAnnouncement from "./page/Dahsboard/Admin/ManageAnnouncement";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
       {
         path:"PaymentHistory",
         element:<MemberRoute><PaymentHistory></PaymentHistory></MemberRoute>
+      },
+      {
+        path:"ManageAnnouncement",
+        element:<ManageAnnouncement></ManageAnnouncement>
       },
       {
         path:"payment",

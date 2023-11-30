@@ -8,7 +8,7 @@ import getAgreement from "../../../utils/getAgreements";
 const AgreementRequest = () => {
   const { data, refetch } = getAgreement();
   const axiosInterceptor = useInterceptor();
-  console.log(data);
+  
   const handelAgreement = async (
     apartment_image,
     apartment_no,

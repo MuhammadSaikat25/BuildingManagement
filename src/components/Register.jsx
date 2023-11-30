@@ -36,7 +36,6 @@ const Register = () => {
       setError("");
     } catch (error) {
       setError("Email already exist");
-      // console.error("Error:", error.error);
     }
   };
 

@@ -5,7 +5,7 @@ import useInterceptor from "../../../Hooks/useInterceptor";
 const ManageUsers = () => {
   const axiosInterceptor = useInterceptor();
   const { data, refetch } = getAllMembers();
-  console.log(data);
+
   const removeMember = async (
     apartment_image,
     apartment_no,
@@ -40,7 +40,7 @@ const ManageUsers = () => {
       `memberToUser/${userEmail}`,
       userInfo
     );
-    console.log(res);
+
     refetch();
   };
   return (
