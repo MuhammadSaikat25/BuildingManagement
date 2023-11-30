@@ -4,7 +4,6 @@ import useInterceptor from "../../Hooks/useInterceptor";
 const Announcement = () => {
   const [announcement, setAnnouncement] = useState([]);
   const axiosInterceptor = useInterceptor();
-  console.log(announcement);
   useEffect(() => {
     axiosInterceptor
       .get("UM/Announcement")

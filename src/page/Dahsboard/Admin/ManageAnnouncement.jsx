@@ -12,7 +12,7 @@ const ManageAnnouncement = () => {
   const [modal, setModal] = useState(false);
   const [announcement, setAnnouncement] = useState([]);
   const axiosInterceptor = useInterceptor();
-console.log(announcement)
+
   const postAnnouncement = async (e) => {
     e.preventDefault();
     const Announcement = e.target.Announcement.value;
@@ -22,9 +22,11 @@ console.log(announcement)
     formRef.current.reset();
   };
 
-    useEffect(() => {
-      axiosInterceptor.get("getAnnouncement").then((res) => setAnnouncement(res.data));
-    }, []);
+  useEffect(() => {
+    axiosInterceptor
+      .get("getAnnouncement")
+      .then((res) => setAnnouncement(res.data));
+  }, []);
   return (
     <div className="max-w-7xl mx-auto w-full h-screen">
       <ToastContainer></ToastContainer>
@@ -63,14 +65,13 @@ console.log(announcement)
           <thead className="bg-gray-100">
             <tr>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-800 uppercase tracking-wider">
-              Announcement
+                Announcement
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-800 uppercase tracking-wider">
-               Date
+                Date
               </th>
-            
             </tr>
-          </thead> 
+          </thead>
           {/* ------------------------------- */}
           <tbody className="bg-white divide-y divide-gray-200">
             {announcement?.map((item) => (
@@ -78,10 +79,7 @@ console.log(announcement)
                 <td className="px-6 py-4 whitespace-nowrap">
                   <span>{item.Announcement}</span>
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap">
-                  {item.date}
-                </td>
-                
+                <td className="px-6 py-4 whitespace-nowrap">{item.date}</td>
               </tr>
             ))}
           </tbody>

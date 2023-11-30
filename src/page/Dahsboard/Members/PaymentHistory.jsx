@@ -44,7 +44,7 @@ const PaymentHistory = () => {
           <option value="11">11</option>
           <option value="12">12</option>
         </select>{" "}
-        <input type="text" name="" id="" />
+        
       </div>
       {
         userPayment.length>0?<table className="min-w-full divide-y divide-gray-200">
