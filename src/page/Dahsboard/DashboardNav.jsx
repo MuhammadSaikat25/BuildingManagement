@@ -20,7 +20,7 @@ const DashboardNav = () => {
         .catch((error) => console.error(error));
     }
   }, [userInfo]);
-  console.log(role);
+
   return (
     <div className="">
       <div className="hidden bg-slate-950 h-screen lg:w-[200px] text-white lg:block p-5">
