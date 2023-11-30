@@ -87,7 +87,7 @@ const router = createBrowserRouter([
       {
         path:"payment",
         element:<MemberRoute><Payment></Payment></MemberRoute>
-      }
+      },
     ]
   }
 ]);
