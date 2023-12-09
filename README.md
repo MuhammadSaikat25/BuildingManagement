@@ -1,8 +1,19 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Building Management (mern stack).
+ * This is building Management website. user can apply for a rent only one Apartment.
+ * Owner (Admin) can accept any rent request or recect .
+ * There is three role admin , member and user .
+ * When a user requst for a rent and until admin accept his rquest his role will be user . And when user accept his request then his role will be menber .
+  # Member 
+ * When user become into member he will get access to Member Dashboard.
+ * Then a member can payment his rent for the apatment. He can also see his payment history. And also can see announcement that admin has make.
+# Admin
+* Admin can accept any rent's request or reject . When admin accept any requst then user become member.
+* Admin also manage (remove) member.if admin remove any member then member role will be user and he can't access member Dashboard.
+* Admin can make any announcement .
+# Technology i have used
+1. react.js
+2. tailwind.css
+3. mongodb
+4. express.js
+5. firebase.
+   
