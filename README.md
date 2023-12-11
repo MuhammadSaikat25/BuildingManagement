@@ -20,4 +20,4 @@
 # Admin 
 email: smsaikat007@gmail.com
 pass:1234567
-Live link : https://building-management-744cc.web.app/aparnments
+Live link : https://building-management-744cc.web.app/
